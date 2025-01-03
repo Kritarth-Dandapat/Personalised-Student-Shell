@@ -1,0 +1,6 @@
+history
+[2025-01-03 11:22:35] [/Users/kritarth/code/Shell in C/src] ls
+[2025-01-03 11:22:37] [/Users/kritarth/code/Shell in C/src] ls -ls
+[2025-01-03 11:22:44] [/Users/kritarth/code/Shell in C/src] history
+[2025-01-03 11:22:50] [/Users/kritarth/code/Shell in C/src] clear
+[2025-01-03 11:22:52] [/Users/kritarth/code/Shell in C/src] history

@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+#include <time.h>
 
 /*
   Function Declarations for builtin shell commands:
@@ -10,6 +11,7 @@
 int lsh_cd(char **args);
 int lsh_help(char **args);
 int lsh_exit(char **args);
+int lsh_history(char **args);
 
 /*
   List of builtin commands, followed by their corresponding functions.
@@ -17,12 +19,14 @@ int lsh_exit(char **args);
 char *builtin_str[] = {
     "cd",
     "help",
-    "exit"};
+    "exit",
+    "history"};
 
 int (*builtin_func[])(char **) = {
     &lsh_cd,
     &lsh_help,
-    &lsh_exit};
+    &lsh_exit,
+    &lsh_history};
 
 int lsh_num_builtins()
 {
@@ -32,6 +36,63 @@ int lsh_num_builtins()
 /*
   Builtin function implementations.
 */
+
+/**
+   @brief Builtin command: display history of all commands used.
+   @param args List of args.  Not examined.
+   @return Always returns 1, to continue executing.
+ */
+int lsh_history(char **args)
+{
+  FILE *fp;
+  char *line = NULL;
+  size_t len = 0;
+
+  // If an argument is provided
+  if (args[1] != NULL)
+  {
+    // Check if the argument is "-c" (case-insensitive)
+    if (strcasecmp(args[1], "-c") == 0)
+    {
+      // Attempt to remove the history file
+      if (remove("history.txt") != 0)
+      {
+        perror("Error clearing history");
+      }
+      else
+      {
+        printf("History cleared successfully.\n");
+      }
+      return 1;
+    }
+    else
+    {
+      fprintf(stderr, "Invalid option: %s\n", args[1]);
+      fprintf(stderr, "Usage: history [-c]\n");
+      return 1;
+    }
+  }
+
+  // Default behavior: display history
+  printf("History of commands used:\n");
+  fp = fopen("history.txt", "r");
+
+  if (fp == NULL)
+  {
+    fprintf(stderr, "No history found.\n");
+    return 1;
+  }
+
+  while (getline(&line, &len, fp) != -1)
+  {
+    printf("%s", line);
+  }
+
+  fclose(fp);
+  if (line)
+    free(line);
+  return 1;
+}
 
 /**
    @brief Bultin command: change directory.
@@ -264,6 +325,30 @@ void lsh_loop(void)
   {
     printf("> ");
     line = lsh_read_line();
+
+    if (line[0] != '\0') // Only write non-empty lines
+    {
+      FILE *fp = fopen("history.txt", "a");
+      if (fp != NULL)
+      {
+        // Get the current working directory
+        char cwd[1024];
+        if (getcwd(cwd, sizeof(cwd)) == NULL)
+        {
+          perror("getcwd error");
+          strncpy(cwd, "unknown", sizeof(cwd)); // Fallback if getcwd fails
+        }
+
+        // Get the current timestamp
+        time_t now = time(NULL);
+        char timestamp[20]; // Format: YYYY-MM-DD HH:MM:SS
+        strftime(timestamp, sizeof(timestamp), "%Y-%m-%d %H:%M:%S", localtime(&now));
+
+        // Write the enhanced details to the file
+        fprintf(fp, "[%s] [%s] %s\n", timestamp, cwd, line);
+        fclose(fp);
+      }
+    }
     args = lsh_split_line(line);
     status = lsh_execute(args);
 
