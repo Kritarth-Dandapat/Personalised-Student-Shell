@@ -46,7 +46,9 @@ int lsh_cd(char **args)
   }
   else
   {
-    if (chdir(args[1]) != 0)
+    // Change the current working directory to the specified path.
+    // If the directory does not exist, an error message is printed.
+    if (chdir(args[1]) != 0) // system call to change directory
     {
       perror("lsh");
     }
@@ -62,7 +64,7 @@ int lsh_cd(char **args)
 int lsh_help(char **args)
 {
   int i;
-  printf("Stephen Brennan's LSH\n");
+  printf("Kritarth Dande's LSH\n");
   printf("Type program names and arguments, and hit enter.\n");
   printf("The following are built in:\n");
 
@@ -95,10 +97,20 @@ int lsh_launch(char **args)
   pid_t pid, wpid;
   int status;
 
+  /**
+   * fork() creates a new process by duplicating the calling process.
+   * The new process, known as the child, is an exact copy of the parent process
+   * except for the returned value. In the child process, fork() returns 0,
+   * while in the parent process, it returns the child's process ID.
+   * This allows both processes to execute concurrently.
+   */
   pid = fork();
   if (pid == 0)
   {
     // Child process
+    /**
+     * Executes a program, replacing the current process image.
+     */
     if (execvp(args[0], args) == -1)
     {
       perror("lsh");
