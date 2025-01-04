@@ -1,0 +1,39 @@
+variable = A variable is a symbolic name assigned to a memory location in a program. It is used to store data that can be manipulated and retrieved during program execution. Variables have types (such as integers, strings, or floats) that determine the kind of data they can hold and are declared with names to make them easily identifiable in the code.
+
+constant = A constant is a fixed value that cannot be changed during the execution of a program. Constants are typically used to represent values that remain the same, such as mathematical constants like Pi or configuration settings in a program. Using constants improves code readability and reduces the risk of errors caused by unintended changes.
+
+data_type = A data type defines the kind of value a variable can hold and determines the operations that can be performed on it. Common data types include integers, floats, characters, and strings. Data types can also be complex, such as arrays, lists, and objects. Understanding data types is essential for effective memory management and avoiding errors in a program.
+
+function = A function is a reusable block of code designed to perform a specific task. Functions improve code organization, reduce redundancy, and promote reusability. They can accept input arguments, perform operations, and return output. In many programming languages, functions are defined using specific keywords like `def` in Python or `function` in JavaScript.
+
+method = A method is similar to a function but is associated with an object or class. Methods define behaviors for objects and can operate on the object's data. For example, a `Car` class may have methods like `startEngine` and `stopEngine` to encapsulate behaviors. Methods often include `this` or `self` to refer to the object they belong to.
+
+class = A class is a blueprint for creating objects in object-oriented programming. It defines attributes (data) and methods (behaviors) that its objects will have. For example, a `Person` class may define attributes like `name` and `age` and methods like `speak` or `walk`. Classes enable code modularity and reusability by encapsulating related functionalities.
+
+object = An object is an instance of a class that represents a specific entity with attributes and behaviors. For example, if `Dog` is a class, then a specific dog named "Rex" is an object. Objects allow real-world modeling in software by bundling data and the methods that operate on that data.
+
+inheritance = Inheritance is a feature in object-oriented programming that allows one class (child) to derive properties and methods from another class (parent). It promotes code reusability by enabling shared functionality between related classes. For example, a `Car` class might inherit from a `Vehicle` class, gaining its attributes like `wheels` and methods like `move`.
+
+encapsulation = Encapsulation is the principle of bundling data (variables) and methods (functions) together into a single unit (class) while restricting direct access to some components. It ensures that the internal representation of an object is hidden from the outside world and can only be manipulated through defined methods, improving code security and maintainability.
+
+polymorphism = Polymorphism is a concept in object-oriented programming that allows objects to take on multiple forms. For example, a `Shape` class might have methods like `draw`, and subclasses such as `Circle` and `Square` can implement their own versions of `draw`. Polymorphism enables flexibility and scalability in code design.
+
+interface = An interface is a contract in programming that specifies methods a class must implement. It defines what functions a class should have but not how they should be implemented. Interfaces are used to achieve abstraction and enforce consistency across different classes.
+
+abstract_class = An abstract class is a class that cannot be instantiated on its own and serves as a base for other classes. It defines methods that derived classes must implement, providing a common structure for related classes. Abstract classes are used to enforce design patterns and share common functionality.
+
+loop = A loop is a control structure that allows repeated execution of a block of code as long as a specified condition remains true. Loops are fundamental for tasks such as iterating over data structures, processing input, or performing repeated calculations. Common types of loops include `for`, `while`, and `do-while`.
+
+array = An array is a data structure that stores a fixed-size sequential collection of elements of the same data type. Arrays are commonly used to group related data, such as storing a list of numbers. They provide fast access to elements using an index, but their size is fixed once declared.
+
+list = A list is a dynamic data structure that can hold an ordered collection of elements. Unlike arrays, lists can grow or shrink in size. Lists are commonly used in high-level programming languages and allow easy insertion, deletion, and traversal of elements.
+
+tuple = A tuple is an immutable sequence of elements, often used to group related data. Tuples are similar to lists but cannot be modified after creation. They are useful for representing fixed collections of items, such as coordinates `(x, y)` or a date `(year, month, day)`.
+
+dictionary = A dictionary is a collection of key-value pairs where each key is unique and maps to a value. Dictionaries allow efficient lookups, additions, and deletions of values based on their keys. They are commonly used to store structured data, such as user information or configuration settings.
+
+set = A set is a collection of unique elements, often used for mathematical operations like union, intersection, and difference. Sets automatically handle duplicates, ensuring that each element appears only once. They are useful for tasks like membership testing and eliminating duplicates from a list.
+
+
+queue = A queue is a linear data structure that follows the First In, First Out (FIFO) principle. Elements are added to the end of the queue and removed from the front. Queues are commonly used in scenarios like task scheduling, printing jobs, and managing resources in simulations.
+

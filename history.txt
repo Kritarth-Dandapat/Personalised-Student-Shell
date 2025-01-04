@@ -1,0 +1,10 @@
+[2025-01-03 15:33:05] [/Users/kritarth/code/Shell in C] clear
+[2025-01-03 15:33:10] [/Users/kritarth/code/Shell in C] history
+[2025-01-03 15:33:12] [/Users/kritarth/code/Shell in C] clear
+[2025-01-03 15:36:38] [/Users/kritarth/code/Shell in C] hoe
+[2025-01-03 15:36:41] [/Users/kritarth/code/Shell in C] clear
+[2025-01-03 15:36:52] [/Users/kritarth/code/Shell in C] help all
+[2025-01-03 15:36:55] [/Users/kritarth/code/Shell in C] help
+[2025-01-03 15:36:57] [/Users/kritarth/code/Shell in C] help enc
+[2025-01-03 15:37:00] [/Users/kritarth/code/Shell in C] help env
+[2025-01-03 15:37:34] [/Users/kritarth/code/Shell in C] help env
