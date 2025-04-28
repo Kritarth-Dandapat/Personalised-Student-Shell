@@ -18,8 +18,8 @@ $(OBJ_DIR):
 	mkdir -p $(OBJ_DIR)
 
 # Target to build the shell when you type 'make shell'
-shell: $(OBJ_FILES)
-	$(CC) $(CFLAGS) -o $(EXEC) $(OBJ_FILES)
+shell: $(OBJ_FILES) 
+	$(CC) $(CFLAGS) -pg -o $(EXEC) $(OBJ_FILES)
 
 # Rule for compiling main.c
 $(OBJ_DIR)/main.o: $(SRC_DIR)/main.c $(SRC_DIR)/scf.h | $(OBJ_DIR)
