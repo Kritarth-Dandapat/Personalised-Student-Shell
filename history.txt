@@ -8,3 +8,10 @@
 [2025-01-03 15:36:57] [/Users/kritarth/code/Shell in C] help enc
 [2025-01-03 15:37:00] [/Users/kritarth/code/Shell in C] help env
 [2025-01-03 15:37:34] [/Users/kritarth/code/Shell in C] help env
+[2025-05-13 12:19:11] [/Users/kritarth/code/Shell in C] help
+[2025-05-13 12:19:14] [/Users/kritarth/code/Shell in C] help learn
+[2025-05-13 12:19:23] [/Users/kritarth/code/Shell in C] remind 
+[2025-05-13 12:19:33] [/Users/kritarth/code/Shell in C] remin 10 task1
+[2025-05-13 12:19:42] [/Users/kritarth/code/Shell in C] remind 10 task1
+[2025-05-13 12:19:49] [/Users/kritarth/code/Shell in C] search
+[2025-05-13 12:53:16] [/Users/kritarth/code/Shell in C] cd ..
